@@ -1,24 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather|Fira+Sans:ital,wght@0,300;1,900&display=swap');
-.App{
-    margin: 0 auto;
-    color: white;
-}
-
-
-
-
-
-.temp{
-    font-family:'Fira Sans', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 200;
-}
-
-.condition{
-    font-family: 'Merriweather', serif;
-    font-size: 1.6rem;
-}
-.icon{
-    width: 40%;
-
+@import url("https://fonts.googleapis.com/css2?family=Merriweather|Fira+Sans:ital,wght@0,300;1,900&display=swap");
+.App {
+  margin: 0 auto;
+  color: white;
 }
