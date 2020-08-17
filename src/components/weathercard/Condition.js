@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const Condition = (props) => {
+const Condition = ({ temp, condition, city, country }) => {
   const Temp = styled.h1`
     font-family: "Fira Sans", sans-serif;
     font-size: 2.5rem;
@@ -14,8 +14,8 @@ const Condition = (props) => {
   `;
   return (
     <>
-      <Temp>20 °C</Temp>
-      <Condition>clouds</Condition>
+      <Temp>{temp}</Temp>
+      <Condition>{condition}</Condition>
     </>
   );
 };
