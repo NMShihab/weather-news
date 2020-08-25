@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Weathercard from "./weathercard/components";
+import SyncLoader from "react-spinners/SyncLoader";
 
 function WeatherEngines() {
   const location = "Dhaka";
@@ -57,7 +58,18 @@ function WeatherEngines() {
           />
         </div>
       ) : loading ? (
-        <div style={{ color: "black" }}>Loading</div>
+        <div
+          style={{
+            display: "flex",
+            width: "200px",
+            height: "240px",
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SyncLoader size={10} color="Red" />
+        </div>
       ) : !loading && error ? (
         <div style={{ color: "red" }}>
           There has been an error!

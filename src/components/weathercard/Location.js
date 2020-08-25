@@ -41,7 +41,7 @@ const City = styled.h1`
   font-size: 1.6rem;
   position: relative;
   cursor: pointer;
-  &::hover {
+  &:hover {
     top: -5px;
   }
 `;
