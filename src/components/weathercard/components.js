@@ -31,7 +31,7 @@ const Weathercard = ({ temp, condition, city, country, getWeather }) => {
     margin: 0 auto;
     background: ${rgb};
     width: 200px;
-    height: 240px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

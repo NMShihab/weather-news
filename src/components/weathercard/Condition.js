@@ -23,7 +23,7 @@ const Condition = ({ temp, condition, city, country }) => {
     number: {
       height: "1em",
       fontFamily: "Fira Sans",
-      fontSize: "2.5rem",
+      fontSize: "2rem",
     },
   };
   const Temp = styled.h1`
@@ -38,7 +38,6 @@ const Condition = ({ temp, condition, city, country }) => {
   `;
   return (
     <>
-      <Temp>{temp}°C</Temp>
       <div style={{ fontSize: "2rem" }}>
         <Reel theme={reelStyle} text={`${temp}°C`} />
       </div>

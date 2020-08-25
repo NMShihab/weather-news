@@ -37,47 +37,45 @@ function WeatherEngines() {
     setLoading(false);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    getWeather(query);
-  };
-
   useEffect(() => {
     getWeather(location);
   }, [location]);
+
+  if (error) {
+    return (
+      <div style={{ color: "red" }}>
+        There has been an error!
+        <br />
+        <button onClick={() => setError(false)}>Reset</button>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "200px",
+          height: "240px",
+          alignContent: "center",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <SyncLoader size={10} color="Red" />
+      </div>
+    );
+  }
+
   return (
-    <div>
-      {!loading && !error ? (
-        <div>
-          <Weathercard
-            temp={weather.temp}
-            condition={weather.condition}
-            city={weather.city}
-            country={weather.country}
-            getWeather={getWeather}
-          />
-        </div>
-      ) : loading ? (
-        <div
-          style={{
-            display: "flex",
-            width: "200px",
-            height: "240px",
-            alignContent: "center",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <SyncLoader size={10} color="Red" />
-        </div>
-      ) : !loading && error ? (
-        <div style={{ color: "red" }}>
-          There has been an error!
-          <br />
-          <button onClick={() => setError(false)}>Reset</button>
-        </div>
-      ) : null}
-    </div>
+    <Weathercard
+      temp={weather.temp}
+      condition={weather.condition}
+      city={weather.city}
+      country={weather.country}
+      getWeather={getWeather}
+    />
   );
 }
 

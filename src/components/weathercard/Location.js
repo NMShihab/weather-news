@@ -5,11 +5,9 @@ const Location = ({ city, country, getWeather }) => {
   const [query, setQuery] = useState("");
   const [inputMode, setInputMode] = useState(false);
 
-  return (
-    <Container>
-      {!inputMode && <City onClick={() => setInputMode(true)}>{city}</City>}
-
-      {inputMode && (
+  if (inputMode) {
+    return (
+      <Container>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -24,8 +22,13 @@ const Location = ({ city, country, getWeather }) => {
           <button type="submit">Search</button>
           <button onClick={() => setInputMode(false)}>Cancel</button>
         </form>
-      )}
+      </Container>
+    );
+  }
 
+  return (
+    <Container>
+      <City onClick={() => setInputMode(true)}>{city}</City>
       <Country>{country}</Country>
     </Container>
   );
